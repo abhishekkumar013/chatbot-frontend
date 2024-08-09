@@ -9,7 +9,7 @@ import { BsChatLeftText } from 'react-icons/bs'
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const { chats, createChat, createLod, setSelected, deleteChat } = ChatData()
-  const { logoutHandler } = UserData()
+  const { LogoutUser } = UserData()
 
   const deleteChatHandler = (id) => {
     if (window.confirm('Are you sure you want to delete this chat?')) {
@@ -83,7 +83,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         <div className="mt-4">
           <button
             className="w-full py-2 bg-red-600 hover:bg-red-700 rounded-lg text-white font-semibold transition-colors flex items-center justify-center space-x-2"
-            onClick={logoutHandler}
+            onClick={LogoutUser}
           >
             <FiLogOut className="text-lg" />
             <span>Logout</span>

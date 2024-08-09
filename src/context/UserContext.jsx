@@ -71,6 +71,21 @@ export const UserProvider = ({ children }) => {
       toast.error(error.response.data.message)
     }
   }
+  async function LogoutUser() {
+    try {
+      const { data } = await axios.get(`${server}/user/logout`, {
+        withCredentials: true,
+      })
+
+      setBtnLoading(false)
+      setIsAuth(false)
+      setIsVerified(false)
+      setUser(null)
+      localStorage.removeItem('isAuth')
+    } catch (error) {
+      toast.error(error.response.data.message)
+    }
+  }
 
   useEffect(() => {
     localStorage.setItem('isAuth', isAuth.toString())
@@ -88,7 +103,15 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ loginUser, btnLoading, verifyUser, user, isAuth, isVerified }}
+      value={{
+        loginUser,
+        btnLoading,
+        verifyUser,
+        user,
+        isAuth,
+        isVerified,
+        LogoutUser,
+      }}
     >
       {children}
       <Toaster />
