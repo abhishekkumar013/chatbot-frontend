@@ -137,7 +137,7 @@ const Home = () => {
             )}
           </div>
           {chats && chats.length > 0 && (
-            <div className="flex-none p-2 bg-gray-800 bg-opacity-50 border-t border-gray-700">
+            <div className="flex-none fixed p-2 bg-gray-800 bg-opacity-50 border-t border-gray-700">
               <form
                 onSubmit={(e) => {
                   e.preventDefault()

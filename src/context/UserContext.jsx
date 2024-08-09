@@ -26,7 +26,6 @@ export const UserProvider = ({ children }) => {
 
       setBtnLoading(false)
     } catch (error) {
-      console.log(error)
       setBtnLoading(false)
       toast.error(error.response.data.message)
     }
