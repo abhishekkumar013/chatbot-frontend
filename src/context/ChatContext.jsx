@@ -136,7 +136,7 @@ export const ChatProvider = ({ children }) => {
         updateSelected(null)
       }
       await fetchChats()
-      window.location.reload()
+      // window.location.reload()
       if (chats.length === 0) {
         setMessages([])
       }
