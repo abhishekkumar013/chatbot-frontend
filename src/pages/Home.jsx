@@ -67,23 +67,23 @@ const Home = () => {
             {loading ? (
               <LoadingBig />
             ) : (
-              <div ref={messageContainerRef} className="space-y-2 sm:space-y-4">
+              <div ref={messageContainerRef} className="space-y-4">
                 {messages && messages.length > 0 ? (
                   messages.map((e, i) => (
-                    <div key={i} className="space-y-1 sm:space-y-2">
-                      <div className="flex items-start space-x-2 bg-blue-600 bg-opacity-50 p-2 sm:p-3 rounded-lg shadow-md">
-                        <div className="flex-shrink-0 bg-white p-1 sm:p-1.5 rounded-full text-blue-600 text-base sm:text-lg">
+                    <div key={i} className="space-y-2">
+                      <div className="flex items-start space-x-2 bg-blue-600 bg-opacity-50 p-3 rounded-lg shadow-md">
+                        <div className="flex-shrink-0 bg-white p-1.5 rounded-full text-blue-600 text-lg">
                           <CgProfile />
                         </div>
-                        <div className="flex-1 break-words text-xs sm:text-sm">
+                        <div className="flex-1 break-words text-sm">
                           {e.question}
                         </div>
                       </div>
-                      <div className="flex items-start space-x-2 bg-gray-700 bg-opacity-50 p-2 sm:p-3 rounded-lg shadow-md relative">
-                        <div className="flex-shrink-0 bg-white p-1 sm:p-1.5 rounded-full text-gray-700 text-base sm:text-lg">
+                      <div className="flex items-start space-x-2 bg-gray-700 bg-opacity-50 p-3 rounded-lg shadow-md relative">
+                        <div className="flex-shrink-0 bg-white p-1.5 rounded-full text-gray-700 text-lg">
                           <FaRobot />
                         </div>
-                        <div className="flex-1 markdown-content overflow-x-auto text-xs sm:text-sm">
+                        <div className="flex-1 markdown-content overflow-x-auto text-sm">
                           <ReactMarkdown
                             components={{
                               code({
@@ -121,14 +121,14 @@ const Home = () => {
                           onCopy={() => toast.success('Message copied!')}
                         >
                           <button className="absolute top-1 right-1 text-white bg-gray-600 p-1 rounded hover:bg-gray-500 transition-colors">
-                            <FaCopy className="text-xs sm:text-sm" />
+                            <FaCopy className="text-sm" />
                           </button>
                         </CopyToClipboard>
                       </div>
                     </div>
                   ))
                 ) : (
-                  <p className="text-center text-gray-400 mt-4 sm:mt-10 text-xs sm:text-sm">
+                  <p className="text-center text-gray-400 mt-10 text-sm">
                     No chat yet. Start a conversation!
                   </p>
                 )}
