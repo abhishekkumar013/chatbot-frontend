@@ -5,7 +5,7 @@ import './index.css'
 import { UserProvider } from './context/UserContext.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { ChatProvider } from './context/ChatContext.jsx'
-export const server = 'http://localhost:8080/api/v1'
+export const server = 'https://chatbotserver-91ed.onrender.com/api/v1'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <UserProvider>
